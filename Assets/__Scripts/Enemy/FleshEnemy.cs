@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Rigidbody))]
+
 public class FleshEnemy : MonoBehaviour
 {
 
     public GameObject enemy; // enemy instance
-    public int level; // corresponds to the game level, scales enemy stats accordingly
-    public double HPFactor; // base for exponential scaling of HP as level number increases
-    public double damageFactor; // base for exponential scaling of damage as level number increases
+    public int level = 1; // corresponds to the game level, scales enemy stats accordingly
+    public double HPFactor = 1.5; // base for exponential scaling of HP as level number increases
+    public double damageFactor = 1.5; // base for exponential scaling of damage as level number increases
     public float range = 3f; // range that enemy can hit player
     public float movementSpeed = 0.5f; // how fast the enemy can move
     public float baseHP = 50; // base hp for enemy

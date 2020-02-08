@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 3315315185721692325}
   - component: {fileID: 3315315185721692326}
   - component: {fileID: 3315315185721692327}
-  - component: {fileID: 2779317807185575117}
+  - component: {fileID: 2764458238364123752}
   m_Layer: 0
   m_Name: Flesh Enemy
   m_TagString: FleshEnemy
@@ -164,7 +164,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &2779317807185575117
+--- !u!114 &2764458238364123752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3315315185721692324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aab25afa08b9074698c20fe4ced34b7, type: 3}
+  m_Script: {fileID: 11500000, guid: d6f97c5dc378c1b44b297c0cd8b48792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3315315185875447297

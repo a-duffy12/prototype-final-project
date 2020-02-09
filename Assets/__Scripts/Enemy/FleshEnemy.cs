@@ -27,9 +27,9 @@ public class FleshEnemy : MonoBehaviour
     //public Level1EnemySpawner l1ES; // enemy spawn script for level 1
     //public Level2EnemySpawner l2ES; // enemy spawn script for level 2
     //public Level3EnemySpawner l3ES; // enemy spawn script for level 3
-    NavMeshAgent agent; // enemy pathfinding agent
-    float nextAttackTime = 0; // time until enemy can attack again
-    Rigidbody r; 
+    private NavMeshAgent agent; // enemy pathfinding agent
+    private float nextAttackTime = 0; // time until enemy can attack again
+    private Rigidbody r; 
 
     // stats after level modification
     private float HP = baseHP*Math.Pow(HPFactor, level-1);

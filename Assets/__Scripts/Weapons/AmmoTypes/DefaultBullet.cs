@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class DefaultBullet : MonoBehaviour
 {
-
-    public float speed = 300f; // how fast the bullet travels
-    public float hitForce = 20f; // strength of impact
-    public float destroyAfter = 2.0f; // how long the bullet object stays instantiated
+    // generic bullet variables (specific to each ammo type)
+    public float speed; // how fast the bullet travels
+    public float hitForce; // strength of impact
+    public float destroyAfter; // how long the bullet object stays instantiated
 
     private float currentTime = 0; // game time
     private Vector3 oldPos; // intial position

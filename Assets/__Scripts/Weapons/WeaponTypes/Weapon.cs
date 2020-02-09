@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
     //public AudioClip reloadAudio; // aduio for reload
 
     [HideInInspector]
-    public WeaponManager manager; // instantiate a weapon manager
+    public Inventory manager; // instantiate a weapon manager
 
     private float nextFireTime = 0; // how long until the next bullet is fired
     private bool hasAmmo = true; // whether or not the mag has ammo left
@@ -89,7 +89,7 @@ public class Weapon : MonoBehaviour
 
                         GameObject bulletObject = Instantiate(bulletType, firePoint.position, firePoint.rotation);
                         Bullet bullet = bulletObject.GetComponent<Bullet>(); // gets an instance of the bullet object
-                        bullet.setDamage(damage); // sets the damage based of the weapon
+                        bullet.SetDamage(damage); // sets the damage based of the weapon
                         currentMagSize--; // removes a bullet from the magazine
                         //source.clip = bulletAudio; // sets firing audio
                         //source.Play(); // plays firing audio
@@ -97,8 +97,8 @@ public class Weapon : MonoBehaviour
                     } else if (ammoType == 1) {
 
                         GameObject bulletObject = Instantiate(bulletType, firePoint.position, firePoint.rotation);
-                        Plasma bullet = bulletObject.GetComponent<Plasma>(); // gets an instance of the bullet object
-                        bullet.setDamage(damage); // sets the damage based of the weapon
+                        Plasma plasmaBullet = bulletObject.GetComponent<Plasma>(); // gets an instance of the bullet object
+                        plasmaBullet.SetDamage(damage); // sets the damage based of the weapon
                         currentMagSize--; // removes a bullet from the magazine
                         //source.clip = plasmaAudio; // sets firing audio
                         //source.Play(); // plays firing audio
@@ -106,8 +106,8 @@ public class Weapon : MonoBehaviour
                     } else if (ammoType == 2) {
 
                         GameObject bulletObject = Instantiate(bulletType, firePoint.position, firePoint.rotation);
-                        Rail bullet = bulletObject.GetComponent<Rail>(); // gets an instance of the bullet object
-                        bullet.setDamage(damage); // sets the damage based of the weapon
+                        Rail railBullet = bulletObject.GetComponent<Rail>(); // gets an instance of the bullet object
+                        railBullet.SetDamage(damage); // sets the damage based of the weapon
                         currentMagSize--; // removes a bullet from the magazine
                         //source.clip = railAudio; // sets firing audio
                         //source.Play(); // plays firing audio
@@ -115,8 +115,8 @@ public class Weapon : MonoBehaviour
                     } else if (ammoType == 3) {
 
                         GameObject bulletObject = Instantiate(bulletType, firePoint.position, firePoint.rotation);
-                        Emp bullet = bulletObject.GetComponent<Emp>(); // gets an instance of the bullet object
-                        bullet.setDamage(damage); // sets the damage based of the weapon
+                        Emp empBullet = bulletObject.GetComponent<Emp>(); // gets an instance of the bullet object
+                        empBullet.SetDamage(damage); // sets the damage based of the weapon
                         currentMagSize--; // removes a bullet from the magazine
                         //source.clip = empAudio; // sets firing audio
                         //source.Play(); // plays firing audio

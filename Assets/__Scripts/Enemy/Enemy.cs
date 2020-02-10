@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 
-[RequireComponent(typeof(NavMeshAgent))]
+//[RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Rigidbody))]
 
 public class Enemy : MonoBehaviour
@@ -20,46 +20,44 @@ public class Enemy : MonoBehaviour
     public float baseDamage; // base damage dealt to player
     public float attackRate; // how fast enemy can attack
     public int baseXP; // how much XP is given to the player upon killing the enemy
-
-    public GameObject enemy; // enemy instance
     public Transform firePoint; // location of where enemy bullets spawn from
 
     [HideInInspector]
     public Transform playerTransform; // player location
     [HideInInspector]
-    //public Level1EnemySpawner l1ES; // enemy spawn script for level 1
-    //public Level2EnemySpawner l2ES; // enemy spawn script for level 2
-    //public Level3EnemySpawner l3ES; // enemy spawn script for level 3
-    private NavMeshAgent agent; // enemy pathfinding agent
-    private float nextAttackTime = 0; // time until enemy can attack again
-    private Rigidbody r; 
+    /*public Level1EnemySpawner l1ES; // enemy spawn script for level 1
+    public Level2EnemySpawner l2ES; // enemy spawn script for level 2
+    public Level3EnemySpawner l3ES; // enemy spawn script for level 3
+    private NavMeshAgent _agent; // enemy pathfinding agent */
+    //private float _nextAttackTime = 0; // time until enemy can attack again
+    //private Rigidbody _r; 
 
     // enemy properties after modifiers
-    private float hp;
-    private float damage;
-    private float xp;
+    private float _hp;
+    private float _damage;
+    private float _xp;
 
     // Start is called before the first frame update
     void Start() {
     
-        agent = GetComponent<NavMeshAgent>(); // gets the level's navmesh
-        agent.stoppingDistance = range; // enemy appraoches until it is within attacking distance
-        agent.speed = movementSpeed; // how fast enemy travels along the mesh
-        r.GetComponent<Rigidbody>(); // gets this enemy's rigidbody
-        //r.useGravity = false;
-        hp = baseHP*(float)Math.Pow(hpFactor, level-1); // set HP
-        damage = baseDamage*(float)Math.Pow(damageFactor, level-1); // set damage
-        xp = baseXP*(float)Math.Pow(xpFactor, level-1); // set xp reward
+        /*_agent = GetComponent<NavMeshAgent>(); // gets the level's navmesh
+        _agent.stoppingDistance = range; // enemy appraoches until it is within attacking distance
+        _agent.speed = movementSpeed; // how fast enemy travels along the mesh
+        _r.GetComponent<Rigidbody>(); // gets this enemy's rigidbody
+        r.useGravity = false; */
+        _hp = baseHP*(float)Math.Pow(hpFactor, level-1); // set HP
+        _damage = baseDamage*(float)Math.Pow(damageFactor, level-1); // set damage
+        _xp = baseXP*(float)Math.Pow(xpFactor, level-1); // set xp reward
     }
 
     // Update is called once per frame
-    void Update() {
+    /* void Update() {
     
-        if (agent.remainingDistance - range < 0.01f) { // checks if player is within targeting distance
+        if (_agent.remainingDistance - range < 0.01f) { // checks if player is within targeting distance
         
-            if (Time.time > nextAttackTime) { // checks if enemy has recently attacked
+            if (Time.time > _nextAttackTime) { // checks if enemy has recently attacked
 
-                nextAttackTime = Time.time + attackRate; // if so, enemy must wait again to attack
+                _nextAttackTime = Time.time + attackRate; // if so, enemy must wait again to attack
 
                 // attack itself
                 RaycastHit hit; // creating the hit raycast
@@ -69,25 +67,25 @@ public class Enemy : MonoBehaviour
 
                         Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * range, Color.red); // draws a line the length of the enemy range, visible in debug mode
                         IEntity player = hit.transform.GetComponent<IEntity>(); // gets the game object of the player
-                        player.ApplyDamage(damage); // applies damage to the player
+                        player.ApplyDamage(_damage); // applies damage to the player
                     }
                 }
             }
         }
 
         // player tracking (subject to change)
-        agent.destination = playerTransform.position; // moves enemy towards palyer
+        _agent.destination = playerTransform.position; // moves enemy towards palyer
         transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, playerTransform.position.z)); // enemy will always face towards the player
-        r.velocity *= 0.99f; // reduces rigidbody velocity if forces act on the bullet
-    }
+        _r.velocity *= 0.99f; // reduces rigidbody velocity if forces act on the bullet
+    } */
 
     // function to apply damage
     public void ApplyDamage(float damageTaken) {
 
-        hp -= damageTaken; // reduces health by the damage taken
-        if(hp <= 0) {
+        _hp -= damageTaken; // reduces health by the damage taken
+        if(_hp <= 0) {
 
-            Destroy(enemy); // destroys the enemy game object
+            Destroy(this); 
 
             // reward XP to player
         }

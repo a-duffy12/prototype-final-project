@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -206,6 +206,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 15597378}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &68766503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 68766504}
+  m_Layer: 0
+  m_Name: GroundTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &68766504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68766503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2105962183}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &161844702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -365,7 +395,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.03e-43, y: 0.0000000017282753, z: 6.04e-43, w: 4.5918e-41}
+  m_BoundingSphereOverride: {x: 7.38e-43, y: -4.3833377e-26, z: 7.37e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4053,8 +4083,8 @@ GameObject:
   - component: {fileID: 1813284418}
   - component: {fileID: 1813284417}
   - component: {fileID: 1813284416}
-  m_Layer: 0
-  m_Name: GroundTest
+  m_Layer: 9
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4534,6 +4564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2105962183}
   - component: {fileID: 2105962182}
+  - component: {fileID: 2105962184}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4573,9 +4604,31 @@ Transform:
   - {fileID: 1177639894}
   - {fileID: 534669905}
   - {fileID: 2063036000}
+  - {fileID: 68766504}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2105962184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105962181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1755b32c05427d94faa1a4e3e883f0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 2105962182}
+  speed: 12
+  grav: -9.81
+  jumpHt: 3
+  groundTest: {fileID: 68766504}
+  groundDist: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &2142024449
 PrefabInstance:
   m_ObjectHideFlags: 0

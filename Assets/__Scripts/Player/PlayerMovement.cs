@@ -11,10 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHt = 3f; //jump height    
 
     Vector3 vel; //velocity
-    bool isGrounded; // is the player in the ground
+    bool isGrounded; //is the player in the ground
 
     public Transform groundTest;
-    public float groundDist = 0.2f; //radius of ground check
+    public float groundDist = 0.7f; //radius of ground check
     public LayerMask groundMask; 
 
     // Start is called before the first frame update
@@ -27,8 +27,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundTest.position, groundDist, groundMask); //tests is player is on the ground
-        if(isGrounded && vel.y < 0){ //sets velocity to -2 when on the ground 
-            vel.y = -2f; //brings the player down faster
+        if(isGrounded && vel.y < 0){ //sets velocity to when on/near the ground 
+            vel.y = -10f; //brings the player down faster
         }
 
         float x = Input.GetAxis("Horizontal"); //creates variables for axis inputs

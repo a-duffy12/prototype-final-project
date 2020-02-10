@@ -7,8 +7,8 @@ public class Inventory : MonoBehaviour
 
     public Camera playerCamera; // player's camera
     public Weapon defaultPistol; // default weapon the player always has
-    public Weapon firstWeapon; // first weapon slot
-    public Weapon secondWeapon; // second weapon slot
+    //public Weapon firstWeapon; // first weapon slot
+    //public Weapon secondWeapon; // second weapon slot
 
     [HideInInspector]
     public Weapon currentWeapon; // weapon the player is currently holding
@@ -18,14 +18,14 @@ public class Inventory : MonoBehaviour
     
         // pistol is open by default
         defaultPistol.ActivateWeapon(true); // activates the pistol
-        firstWeapon.ActivateWeapon(false); // 1st slot disabled
-        secondWeapon.ActivateWeapon(false); // 2nd slot disabled
+        //firstWeapon.ActivateWeapon(false); // 1st slot disabled
+        //secondWeapon.ActivateWeapon(false); // 2nd slot disabled
         currentWeapon = defaultPistol; // player has pistol in hand by default
         
         // setting this file to the manager for all the weapon slots
         defaultPistol.manager = this; 
-        firstWeapon.manager = this;
-        secondWeapon.manager = this;
+        //firstWeapon.manager = this;
+        //secondWeapon.manager = this;
     }
 
     // Update is called once per frame
@@ -35,11 +35,11 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
 
             defaultPistol.ActivateWeapon(true); // switch to pistol
-            firstWeapon.ActivateWeapon(false); // 1st slot disabled
-            secondWeapon.ActivateWeapon(false); // 2nd slot disabled
+            //firstWeapon.ActivateWeapon(false); // 1st slot disabled
+            //secondWeapon.ActivateWeapon(false); // 2nd slot disabled
             currentWeapon = defaultPistol; // player now has pistol in hand
         }
-
+        /*
         // brings up first weapon when pressing 2
         if (Input.GetKeyDown(KeyCode.Alpha2)) {
 
@@ -56,7 +56,7 @@ public class Inventory : MonoBehaviour
             firstWeapon.ActivateWeapon(false); // 1st slot disabled
             secondWeapon.ActivateWeapon(true); // switch to 2nd slot
             currentWeapon = secondWeapon; // player now has weapon 2 in hand
-        }
+        } */
         
     }
 }

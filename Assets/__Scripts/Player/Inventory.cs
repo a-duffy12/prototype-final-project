@@ -39,7 +39,11 @@ public class Inventory : MonoBehaviour
             secondWeapon.ActivateWeapon(false); // 2nd slot disabled
             currentWeapon = defaultPistol; // player now has pistol in hand
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> combat-Aiden
         // brings up first weapon when pressing 2
         if (Input.GetKeyDown(KeyCode.Alpha2)) {
 
@@ -56,7 +60,11 @@ public class Inventory : MonoBehaviour
             firstWeapon.ActivateWeapon(false); // 1st slot disabled
             secondWeapon.ActivateWeapon(true); // switch to 2nd slot
             currentWeapon = secondWeapon; // player now has weapon 2 in hand
+<<<<<<< HEAD
         }
+=======
+        } 
+>>>>>>> combat-Aiden
         
     }
 }

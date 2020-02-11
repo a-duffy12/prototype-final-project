@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - FleshEnemy
+<<<<<<< HEAD
+=======
+  - Weapon
+  - Bullet
+  - Plasma
+>>>>>>> combat-Aiden
   layers:
   - Default
   - TransparentFX

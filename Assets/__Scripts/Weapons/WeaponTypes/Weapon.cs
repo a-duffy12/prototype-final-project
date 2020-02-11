@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour
         }
 
         // reload
-        if (Input.GetKeyDown(KeyCode.R)) { // R to reload
+        if (Input.GetKeyDown(KeyCode.R) && _hasAmmo) { // R to reload
 
             StartCoroutine(Reload()); // reloads weapon
         }
@@ -126,7 +126,7 @@ public class Weapon : MonoBehaviour
 
                     // could have it reload, instead play a message saying to reload
                     // automatic reloads are waste
-                    _hasAmmo = false; //prevents weapon from firing   
+                    //prevents weapon from firing   
                 }          
             }
         }

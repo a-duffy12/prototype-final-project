@@ -148,7 +148,7 @@ MonoBehaviour:
   ammoType: 2
   singleFire: 0
   fireRate: 0.125
-  currentMagSize: 20
+  magSize: 20
   reloadTime: 2.8
   damage: 37
   range: 40

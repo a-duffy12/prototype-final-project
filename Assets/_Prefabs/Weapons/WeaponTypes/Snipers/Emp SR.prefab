@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4787959871286443132}
   - component: {fileID: 3780983069192038085}
   m_Layer: 0
-  m_Name: Long Emp
+  m_Name: Emp SR
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   ammoType: 3
   singleFire: 1
   fireRate: 0.2
-  currentMagSize: 12
+  magSize: 12
   reloadTime: 3.3
   damage: 75
   range: 100

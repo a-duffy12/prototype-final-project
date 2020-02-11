@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2070606337138520563}
   - component: {fileID: 9107045238693232731}
   m_Layer: 0
-  m_Name: Long Plasma
+  m_Name: Plasma SR
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   ammoType: 1
   singleFire: 1
   fireRate: 0.8
-  currentMagSize: 8
+  magSize: 8
   reloadTime: 3.5
   damage: 120
   range: 100
